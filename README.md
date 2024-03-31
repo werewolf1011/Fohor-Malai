@@ -24,6 +24,19 @@ git clone https://github.com/werewolf1011/Fohor_Malai.git
 2. Navigate to the Project Directory
 cd Fohor_Malai
 
+  >>> Go to "info.py" in "Fohor Malai" app folder and use your own email and app password here:
+
+  EMAIL_HOST_USER = "your_email@gmail.com"
+  EMAIL_HOST_PASSWORD = "<your_email_host_password>"
+
+
+  >>> Go to settings.py and use your own keys here:
+  SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = (
+      "<your_SOCIAL_AUTH_GOOGLE_OAUTH2_KEY>"
+  )
+  SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "<your_SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET>"
+
+
 3. Run Migrations
 Apply the database migrations:
 
