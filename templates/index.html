@@ -1,0 +1,356 @@
+{% extends 'base.html' %} {% block content %}
+{% load static %}
+
+<!-- Header start  -->
+  {% for message in messages%}
+    <div class="alert success">
+      <span class="closebtn">&times;</span>  
+      <strong>Success!</strong> {{message}}
+    </div>
+  {% endfor %}
+  <script src="{%static "js/alert.js" %}"> </script>
+
+<div class="header_image">
+  <img src="{% static "image/header.jpeg" %}" alt="Hero Image" />
+  <div class="header_text">
+    <div class="top_text">Report, Resolve, Reclaim:</div>
+    <div class="bottom_text">Making Waste Complaints Count</div>
+  </div>
+  <div class="video" id="video">
+    <i class="fas fa-play-circle"></i>
+    <p><span>watch video</span></p>
+    <script src="{%static "js/alert.js" %}"> </script>
+
+  </div>
+
+</div>
+<div id="video-container">
+  <div id="overlay"> 
+
+    <video id="my-video" controls autoplay loop muted class="video-overlay">
+      <source src="{% static "image/Waste_and_Recycling.mp4" %}" type="video/mp4">
+    </video>
+    </div>
+    <script src="{%static "js/video.js"%}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</div>
+
+<!-- Header end  -->
+ 
+<!-- Logo start -->
+<div class="service_logo" data-aos="fade-up">
+  <img src="{% static "image/dustbins.png"%}" />
+  <img src="{% static "image/recycling.png"%}" />
+  <img src="{% static "image/fm.png"%}" />
+  <img src="{% static "image/organic.jfif"%}" />
+  <img src="{% static "image/correctdust.jfif"%}" />
+</div>
+<!-- Logo end -->
+
+<!-- Cards Start -->
+
+
+<div class="slider" data-aos="fade-up">
+  <h1> <a href="{% url "newsblog" %}">NEWS BLOGS</a></h1>
+  <div class="card-slider">
+    {% for n in cards %}
+    <a href="{% url "newsblog" %}">
+    <div class="card"> 
+      <img src="/media/{{ n.news_image }}" alt="" />
+      <div class="intro">
+        <h1>{{n.news_title | safe}}</h1>
+        <p>
+          {{n.news_content | safe}}
+        </p>
+      </div>
+    </div>
+    </a>
+    {% endfor %}
+
+
+  </div>
+</div>
+<!-- Cards Stop  -->
+
+<!-- Aout us Section start -->
+<div class="about" id="about"></div>
+<div class="about_container" data-aos="fade-up">
+  <h1>ABOUT US</h1>
+  <p>
+    <b>Welcome to Fohor malai, your go-to platform for addressing waste management issues in our communities.</b>
+  </p>
+  <p>
+   Our vision: <i>“Establish a sustainable and cleaner environment where inhabitants are actively associated with
+      waste management, and communities grow through accountable recycling practices.”</i>
+      <br><br>Our Mission
+      At Fohor malai, we're dedicated to creating cleaner, healthier environments by empowering 
+      citizens to report and resolve waste management problems efficiently. 
+      Our mission is to bridge the gap between the public and waste management authorities, 
+      fostering a collaborative effort to tackle waste-related issues head-on.
+  </p>
+  <div class="additional-content hidden">
+    <h2>What We Do</h2>
+    <ul>
+      <li>
+        <h3>Facilitate Citizen Engagement:</h3>
+        <p>We provide a user-friendly platform where citizens can easily report instances of unmanaged waste in their neighborhoods. By encouraging active participation, we empower individuals to take ownership of their environment.</p>
+      </li>
+      <li>
+        <h3>Streamline Complaint Handling:</h3>
+        <p>Our integrated system ensures that complaints are swiftly processed and directed to the relevant authorities. Through seamless communication channels, we facilitate dialogue between citizens and waste management agencies, ensuring timely resolution of reported issues.</p>
+      </li>
+      <li>
+        <h3>Promote Accountability:</h3>
+        <p>Transparency and accountability are at the core of our operations. By tracking the progress of reported complaints and publicly sharing outcomes, we hold responsible parties accountable for maintaining clean and sustainable communities.</p>
+      </li>
+    </ul>
+  
+    <h2>Our Vision</h2>
+    <p>We envision a future where every community enjoys clean, waste-free surroundings, fostering a healthier and more sustainable environment for generations to come. By harnessing the collective power of citizen engagement, technology, and responsible governance, we strive to realize this vision one complaint at a time.</p>
+  
+    <h2>Get Involved</h2>
+    <ul>
+      <li>
+        <h3>Report Waste:</h3>
+        <p>Have you spotted unmanaged waste in your area? Report it to us, and let's work together to address the issue.</p>
+      </li>
+      <li>
+        <h3>Spread Awareness:</h3>
+        <p>Help raise awareness about the importance of proper waste management practices. Share our platform with your friends, family, and community members.</p>
+      </li>
+      <li>
+        <h3>Collaborate with Us:</h3>
+        <p>Are you part of a waste management organization or government agency? Let's collaborate to streamline waste management processes and enhance community engagement.</p>
+      </li>
+    </ul>
+  </div>
+
+  <button id="read-more">Learn More...</button>
+</div>
+<!-- Aout us Section ends -->
+
+<!-- guidelines section start  -->
+
+<section class="guidelines-section" data-aos="fade-up">
+  <div class="container">
+    <div class="content-container">
+      <div class="content">
+        <h2>Guidelines for Proper Waste Management and Recycling</h2>
+        <p>
+          <b>Welcome to our comprehensive guide on waste management 
+            and recycling! Proper waste management is crucial for maintaining 
+            clean and sustainable communities. Recycling plays a significant role in 
+            reducing waste and conserving resources. In this section, 
+            we'll cover fundamental principles and practices to help you effectively 
+            manage waste and promote recycling in your daily life.</b>
+        </p>
+        <p>
+          <b>Understanding Waste Management</b>
+          Waste management involves the collection, transportation, 
+          processing, and disposal of waste materials. It encompasses 
+          various strategies aimed at minimizing the impact of waste on the 
+          environment and human health. By implementing sustainable waste management practices, 
+          we can mitigate pollution, reduce greenhouse gas emissions, and conserve valuable resources.
+          <br>
+          <b>Importance of Recycling</b>
+          Recycling is a cornerstone of sustainable waste management. 
+          It involves the conversion of used materials into new products, 
+          thereby diverting them from landfills and reducing the need for virgin raw materials. 
+          Recycling conserves energy, reduces water consumption, and helps mitigate the depletion 
+          of natural resources. By recycling materials such as paper, plastics, glass, and metals,
+          we can significantly reduce our environmental footprint and promote a circular economy.</p>
+      </div>
+      <div class="guide">
+        <img src="{% static "image/guide.jpg"%}" alt="Top Right Image" class="top-right-image" />
+      </div>
+    </div>
+    <div class="dropdowns">
+      <div class="dropdown">
+        <button class="dropdown-btn">
+          Sorting and Segregation <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="dropdown-content">
+          <p>Proper sorting and segregation of waste are essential steps in effective 
+            waste management. Follow these guidelines:
+            <ul>
+              <li>Separate recyclable materials such as paper, plastics, glass, and metals from non-recyclables.</li>
+              <li>Rinse and clean recyclables to prevent contamination.</li>
+              <li>Use separate bins or containers for different types of waste to facilitate recycling efforts.</li>
+            </ul>
+            </p>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-btn">
+          Reduce, Reuse, Recycle <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="dropdown-content">
+          <p>Adopt the "3 Rs" approach to minimize waste and promote sustainability:
+            <ul>
+              <li>Reduce: Reduce consumption by opting for products with minimal packaging and avoiding single-use items.</li>
+              <li>Reuse: Extend the life of products by repairing, repurposing, or donating them instead of throwing them away.</li>
+              <li>Recycle: Recycle materials whenever possible to divert them from landfills and conserve natural resources.</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-btn">
+          Hazardous Waste Disposal <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="dropdown-content">
+          <p>Dispose of hazardous waste responsibly to protect the environment and public health:
+            <ul>
+              <li>Identify hazardous materials such as batteries, electronics, chemicals, and fluorescent bulbs.</li>
+              <li>Research local hazardous waste disposal facilities or collection events for proper disposal options.</li>
+              <li>Never dispose of hazardous waste in regular trash bins or pour it down drains.</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- guidelines section end -->
+
+<!-- WASTE COMPOSITION SECTION START -->
+<section class="waste-composition-section" data-aos="fade-up">
+  <div class="container">
+    <div class="image">
+      <img src="{% static "image/paper.png"%}" alt="Left Image" />
+    </div>
+
+    <div class="composition-details">
+      <h2>Waste Composition in Nepal</h2>
+      <div class="skill-box">
+        <span class="title">Plastic</span>
+
+        <div class="skill-bar">
+            <span class="skill-per html">
+                <span class="tooltip">90%</span>
+            </span>
+        </div>
+      </div>
+
+      <div class="skill-box">
+        <span class="title">Paper and Glass</span>
+
+        <div class="skill-bar">
+            <span class="skill-per css">
+                <span class="tooltip">70%</span>
+            </span>
+        </div>
+      </div>
+
+      <div class="skill-box">
+        <span class="title">
+          Food Waste</span>
+
+        <div class="skill-bar">
+            <span class="skill-per javascript">
+                <span class="tooltip">50%</span>
+            </span>
+        </div>
+      </div>
+
+      <div class="skill-box">
+        <span class="title">Garden Waste</span>
+
+        <div class="skill-bar">
+            <span class="skill-per nodejs">
+                <span class="tooltip">30%</span>
+            </span>
+        </div>
+      </div>
+      
+  </div>
+</section>
+<!-- WASTE COMPOSITION SECTION ENDS -->
+
+<div class="cta_container" data-aos="fade-up">
+  <div class="content">
+    <h2>Ready to manage your waste responsibly?</h2>
+    <p>Get started with our waste management and recycling services today!</p>
+  </div>
+  <a href="tel:YOUR_PHONE_NUMBER" class="cta-button">Call for Action</a>
+</div>
+
+<section class="faq" data-aos="fade-up">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <h3 class="faq-question">
+      What items can be recycled?
+      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    </h3>
+    <div class="faq-answer hidden">
+      <p>
+        Many common household items can be recycled, including paper, 
+        cardboard, plastics (such as bottles and containers marked with recycling symbols), 
+        glass bottles and jars, aluminum cans, and steel/tin cans. It's important to check 
+        with your local recycling program to determine which specific materials are accepted in 
+        your area, as recycling guidelines may vary.
+      </p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <h3 class="faq-question">
+      How should I dispose of electronic waste (e-waste)?
+      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    </h3>
+    <div class="faq-answer hidden">
+      <p>
+        Electronic waste, or e-waste, should be properly disposed of to prevent environmental 
+        pollution and promote resource recovery. Many electronics contain hazardous materials 
+        that can leach into the environment if not handled correctly. To dispose of e-waste
+        responsibly, consider options such as recycling programs offered by electronic retailers 
+        or municipal collection events. Some manufacturers also provide take-back programs for 
+        their products. Avoid throwing e-waste in regular trash bins or dumping it illegally.
+      </p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <h3 class="faq-question">
+      How do I make complain?
+      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    </h3>
+    <div class="faq-answer hidden">
+      <p>
+        For making a complain follow teh followitn steps:
+        <ul>
+          <li>Click to login on the navigation bar</li>
+          <li>Enter id and password and login and you can also login directly with you google account</li>
+          <li>if you don't have an account then click on register fill the form click create account <br>
+            then a varificatiion email will be sent click varify and your account is sucessfully created <br>
+            or you can just signup with your google account also
+          </li>
+          <li>After creating and loging in, Click on complain in the navigation bar and make a complain</li>
+        </ul>
+      </p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <h3 class="faq-question">
+      Can food waste be recycled?
+      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    </h3>
+    <div class="faq-answer hidden">
+      <p>
+        While food waste cannot typically be recycled through traditional 
+        recycling programs, it can be composted to produce nutrient-rich soil amendment. 
+        Composting is a natural process that breaks down organic materials like food scraps, 
+        yard waste, and paper into compost, which can be used to enrich soil in gardens and 
+        landscaping. Consider starting a compost bin or participating in a community composting 
+        program to divert food waste from landfills and promote soil health.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- {% comment %} <div class="map-responsive">
+  <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Kathmandu" width="600" height="430" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
+</div> {% endcomment %} -->
+<div class="map">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.2797474111835!2d85.3215140150154!3d27.708647682791312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1908ed7fbacd%3A0x49b04b284da7a96f!2sIIMS+College!5e0!3m2!1sen!2snp!4v1551085414779" style="border:0" allowfullscreen="" data-gtm-yt-inspected-11="true" data-gtm-yt-inspected-16="true" width="100%" height="500" frameborder="0"></iframe>
+</div>
+
+{% endblock %}

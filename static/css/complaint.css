@@ -1,0 +1,310 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.complain_sec {
+  font-size: 1rem;
+  background-color: #f0e2e2;
+  display: flex;
+  justify-content: center;
+  align-items: right;
+  min-height: 100vh;
+}
+
+.photo2 {
+  margin-top: 10%;
+  position: absolute;
+  left: -3%;
+  top: 20%;
+}
+
+.photo {
+  max-width: 0%;
+  background: transparent;
+  height: 5px;
+  margin-top: 30px;
+  position: absolute;
+  left: 8%;
+  font-size: 1rem;
+}
+
+.photo3 {
+  position: absolute;
+  top: 16%;
+  right: 20%;
+  width: 20%;
+  height: auto;
+}
+
+.photo3 img {
+  width: 130%;
+  height: auto;
+}
+
+.container {
+  background: transparent;
+  text-align: center;
+  position: relative;
+  background: white;
+  width: 55%;
+  padding: auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  left: 12%;
+  box-shadow: rgba(0, 0, 0, 0.5);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+}
+
+form {
+  padding-top: 40px;
+}
+
+.container h2 {
+  color: #5da05c;
+  font-size: 30px;
+  line-height: 30px;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.input-name {
+  width: 90%;
+  position: relative;
+  margin: 20px auto;
+  font-size: 1rem;
+}
+
+.input-name span {
+  color: grey;
+  position: absolute;
+  padding: 10px;
+  left: 1%;
+  margin-top: -45px;
+  font-size: 1rem;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.name {
+  width: 46%;
+  padding: 15px;
+  border-radius: 10px;
+  margin-right: 80%;
+  align-items: left;
+  font-size: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-name .text-name {
+  font-size: 1rem;
+  padding: 15px;
+  width: 46%;
+  border-radius: 10px;
+  margin-right: 80%;
+  margin-bottom: -10px;
+}
+
+select {
+  height: 50px;
+  width: 42%;
+  padding: 10px;
+  margin-left: -7%;
+  box-shadow: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  border-color: black;
+  outline: none;
+  font-size: 1rem;
+}
+
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.upload-icon {
+  font-size: 1rem;
+  position: relative;
+  display: inline-block;
+  top: 19px;
+  left: 5%;
+  width: 40%;
+  max-width: 350px;
+  height: 50px;
+  line-height: 50px;
+  background-color: transparent;
+  border: 1px solid #030303;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.upload-icon input[type="file"] {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.upload-icon i {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.complain {
+  padding: 30px;
+  margin-top: 10px;
+}
+
+.complain span {
+  color: grey;
+  position: absolute;
+  padding: 10px;
+  left: 4%;
+  font-size: 1rem;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.input-name input:valid ~ span,
+.input-name input:focus ~ span {
+  color: #5da05c;
+  transform: translateX(10px) translateY(-15px);
+  margin-top: -50px;
+  font-size: 1rem;
+  padding: 0 10px;
+  background: white;
+  border-left: 1px solid #5da05c;
+  border-right: 1px solid #5da05c;
+}
+
+.complain textarea:valid ~ span,
+.complain textarea:focus ~ span {
+  color: #5da05c;
+  transform: translateX(10px) translateY(-8px);
+
+  font-size: 1rem;
+  padding: 0 10px;
+  background: white;
+  border-left: 1px solid #5da05c;
+  border-right: 1px solid #5da05c;
+}
+
+.complain input[type="text"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+textarea {
+  height: 300px;
+}
+
+.btn {
+  padding: 10px;
+  width: 30%;
+  height: 50px;
+  background: rgb(50, 143, 50);
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 300px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: rgb(15, 68, 15);
+  color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  html,
+  body {
+    height: 117%;
+    overflow-x: hidden;
+  }
+
+  .photo3 {
+    display: none;
+  }
+  .photo2 {
+    display: none;
+  }
+
+  .container {
+    width: 100%;
+
+    left: 0%;
+  }
+
+  .input-name {
+    width: 90%;
+    padding: 5px;
+    margin: 10px auto;
+  }
+
+  .select-waste {
+    width: 90%;
+    margin-left: 8%;
+  }
+
+  .name,
+  .input-name .text-name,
+  select,
+  input[type="file"],
+  textarea {
+    width: 100%;
+  }
+
+  .upload-icon {
+    width: 100%;
+
+    margin-right: 60%;
+    left: -3%;
+  }
+
+  .btn {
+    width: 50%;
+  }
+
+  .complain span {
+    right: 10%;
+  }
+
+  .complain textarea:valid ~ span,
+  .complain textarea:focus ~ span {
+    margin-left: 18%;
+    width: 50%;
+  }
+  .select option {
+    width: 1%;
+    padding: 8px;
+  }
+}

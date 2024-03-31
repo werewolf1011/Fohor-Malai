@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Website Title</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Nav bar start  -->
+    <header class="header">
+      <div class="logo">
+        <img src="{% static "image/icon.png" %}" alt="" />
+      </div>
+
+      <nav class="nav">
+        <ul>
+          <li class="nav-item {% if request.path == '/'%} active {% endif %}"><a href="{% url "home" %}">Home</a></li>
+          <li class="nav-item {% if request.path == '/complaint/'%} active {% endif %}"><a href="{% url "complaint" %}">Complaint</a></li>
+          <li class="nav-item {% if request.path == '/preview/'%} active {% endif %}"><a href="{% url "preview" %}">Preview</a></li>
+          <li class="nav-item"><a href="#about">About</a></li>
+
+
+          {% if user.is_authenticated %}
+
+            <li><a href="{% url "logout" %}">Logout</a></li>
+
+            <div class="profile-container hide" id="profileContainer">
+            <div class="diamond " id="diamond"></div>
+              
+              <div class="profile-picture">
+                <i class='far fa-user-circle' style='font-size:36px'></i>
+              </div>
+              <div class="profile-details">
+                <h2>username: {{ user.username }}</h2>
+                <p>Name: {{user.first_name}} {{user.last_name}}</p>
+                <p>Email: {{ user.email }}</p>
+                <p>Phone: {{ user.address }}</p>
+              </div>
+              <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+            </div>
+          {% else %}
+            <li class="nav-item {% if request.path == '/login/'%} active {% endif %}"><a href="{% url "login" %}">Login</a></li>
+          {% endif %}
+
+          <li class="nav-item {% if request.path == '#'%} active {% endif %}">
+            <a href="#" onclick="toggleProfile()" ><i class="fa fa-user" aria-hidden="true" id="profile"></i> </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="mobile-navbar-btn">
+        <ion-icon name="menu-outline" class="mobile-nav-icon"></ion-icon>
+        <ion-icon name="close-outline" class="mobile-nav-icon"></ion-icon>
+      </div>
+    </header>
+
+  
+    <!-- Nav bar end  -->

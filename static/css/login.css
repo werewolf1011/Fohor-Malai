@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+
+}
+
+/* .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+
+} */
+
+.logo {
+  height: 210px;
+  margin-left: -10px;
+  margin-top: -20px;
+  
+
+}
+.navigation{
+  margin-top: -20px;
+  margin-bottom: 50px;
+}
+.navigation a {
+  position: relative;
+  font-size: 1.1em;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+  
+}
+
+.navigation .btnRegister-popup {
+  width: 130px;
+  height: 50px;
+  background: green;
+  border: 2px solid #5eaa60;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: .5;
+}
+
+.navigation .btnRegister-popup:hover {
+  background-color: #fff;
+  color: #162938;
+}
+
+.login_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(95deg, #4d9d4d 49.20%, #e1e3d1 49.5%);
+  background-size: cover;
+  background-position: center;
+}
+
+.wrapper {
+  background-color: rgb(240, 232, 232);
+  position: relative;
+  width: 400px;
+  height: 360px;
+
+  border: 2px solid rgba(255, 255, 255, .5);
+  border-radius: 20px;
+
+  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.wrapper .form-box {
+  width: 100%;
+  padding: 50px;
+
+}
+
+.form-box h2 {
+
+  font-size: 2em;
+  color: green;
+  text-align: center;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+  height: 55px;
+  margin: 15px 0;
+  margin-bottom: 0px;
+
+}
+
+
+
+.input-box input {
+  background-color: rgb(223, 213, 201);
+  width: 100%;
+  height: 60%;
+  padding: 10px 40px;
+  border: white;
+  border-radius: 20px;
+
+}
+
+.input-box input::placeholder {
+  color: green;
+}
+
+.input-box .icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input-box .icon ion-icon {
+  margin-bottom: 15px;
+  font-size: 1 em;
+
+}
+
+
+
+.forget {
+  font-size: 1em;
+  color: black;
+  font-weight: 500;
+  margin: 0px 0 0px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.forget a {
+  color: green;
+  text-decoration: none;
+
+}
+
+.forget a:hover {
+  text-decoration: underline;
+}
+.button{
+  text-align: center;
+}
+.btn {
+  padding: 5px;
+  width: 75%;
+  height: 35px;
+  background: green;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.btn a{
+  text-decoration: none;
+  color: white;
+}
+.btn:hover {
+  background-color: rgb(15, 68, 15);
+  color: #fff;
+}
+
+
+.login-register {
+  font-size: 1em;
+  text-align: center;
+}
+
+.btnRegister-popup:hover {
+  background-color: #fff;
+  color: #162938;
+}
+
+.login-register p a {
+  color: green;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-register p a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+@media only screen and (max-width: 900px) {
+  body {
+    padding-top: 100px; /* Adjusting for the fixed header */
+    background: linear-gradient(95deg, #4d9d4d 49.20%, #e1e3d1 49.5%);
+  }
+
+  header {
+    padding: 10px 20px; /* Adjusting padding for mobile */
+  }
+
+  .logo {
+    height: 100px; /* Adjusting logo size for mobile */
+  }
+
+  .navigation {
+    margin-top: 2px; /* Adjusting margin for mobile */     
+    
+  }
+
+  .navigation .btnRegister-popup {
+    /* Adjusting margin for mobile */
+    margin-right: 100px;
+  }
+
+  .wrapper {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .form-box {
+    padding: 30px;
+  }
+
+  .input-box input {
+    padding: 10px 20px; /* Adjusting padding for mobile */
+  }
+
+  .btn {
+    width: 100%; /* Making the button full width */
+    margin-left: 0; /* Removing left margin */
+  }
+}

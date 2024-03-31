@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+
+<link rel="stylesheet" href="{% static "css/login.css" %}">
+<div class="login_container">
+  <!-- <div class="header">
+    <img src="{% static "image/फोहो_र_मलाइ__1_-removebg-preview.png" alt="Logo Image" %}% class="logo">
+    <nav class="navigation">
+
+
+
+      <button class="btnRegister-popup">Back to Home</button>
+      <button class="btnRegister-popup">Register</button>
+    </nav>
+  </div> -->
+
+
+  <div class="wrapper">
+    <div class="form-box signin">
+      {% for message in messages%}
+      <div class="alert">
+        <span class="closebtn">&times;</span>  
+        <strong>Error!</strong> {{message}}
+      </div>
+      {% endfor%}
+    <script src="{%static "js/alert.js" %}">
+      // let close = document.getElementsByClassName("closebtn");
+      // let i;
+
+      // for (i = 0; i < close.length; i++) {
+      //   close[i].onclick = function(){
+      //   var div = this.parentElement;
+      //   div.style.opacity = "0";
+      //   setTimeout(function(){ div.style.display = "none"; }, 600);
+      //   }
+      // }
+    </script>   
+          
+         
+      </script>
+      <h2>Sign In</h2>
+      <form method="post">
+        {% csrf_token %}
+        <div class="input-box">
+          <span class="icon"> <ion-icon name="person"></ion-icon></span>
+          <input type="username" placeholder=" Username:" name="username" required>
+
+        </div>
+
+        <div class="input-box">
+          <span class="icon"> <ion-icon name="lock-closed"></ion-icon></span>
+
+          <input type="password" placeholder=" Password:" name="password" required>
+
+        </div>
+        <div class="button">
+          <button type="submit" class="btn">Log In </button>
+          <button class="btn"> <a href="{% url 'social:begin' 'google-oauth2' %}"><ion-icon name="logo-google"></ion-icon> Continue with Google </a></button>
+        </div>
+        <div class="forget">
+          <p>Forgot password?
+            <a href="{% url 'password_reset'%}">Click here to reset.</a>
+          </p>
+        </div>
+        <div class="login-register">
+          <p>Don't have an account? <a href="{% url "signup" %}" class="register-link">Register</a></p>
+        </div>
+        
+
+    </form>
+
+  </div>
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</div>
+  {% endblock %}

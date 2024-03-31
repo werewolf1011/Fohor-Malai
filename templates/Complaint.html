@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static "css/complaint.css" %}">
+<div class="complain_sec">
+    <div class="photo">
+        <img src={% static "image/फोहो_र_मलाइ__1_-removebg-preview.png" %} alt="">
+    </div>
+
+    <div class="photo2">
+        <img src={% static "image/7299445.png" %} alt="" style="height: 550px;" sytle="width:2%">
+    </div>
+
+    <div class="container">
+        <h2>Complain Form</h2>
+
+
+        <div class="form-container">
+            <form method="post">
+                {% csrf_token %}
+                <div class="photo3">
+                    <img src={% static "image/1545.png_860.jpg" %} alt="">
+                </div>
+                <div class="input-name">
+
+                    <input type="text"  class="name" name="complainer_name" required>
+                    <span>Full Name</span>
+
+
+                </div>
+
+                <div class="input-name">
+                    <input type="text"  class="name" name="complainer_address" required>
+                    <span>Address</span>
+                </div>
+
+                <div class="input-name">
+                    <input type="tel" class="name" name="complainer_phone" pattern="[0-9]{10}" title="Please enter a 10-digit phone number" required>
+                    <span>Phone</span>
+                </div>
+                
+
+
+                <div class="select-waste">
+                    <select id="waste-type" name="waste_type" required>
+                        <option value="" hidden><span>Select your waste type</span></option>
+                        <option value="organic">Organic</option>
+                        <option value="recyclable">Recyclable</option>
+                        <option value="Non-organic">Non-organic</option>
+                    </select>
+                    <div class="upload-icon">
+                        <input type="file" id="photo" name="image" accept="image/*">
+                        <i class="fas fa-upload"></i> Upload image 
+                    </div>
+                </div>
+
+                <div class="complain"> 
+                                    
+                    <textarea id="complain" name="complaint_desc" required></textarea>
+                    <span>Complain</span>  
+                    
+                </div>
+        </div>
+
+        <div class="input-name">
+            <button type="submit" class="btn">Submit </button>
+        </div>
+
+        <label for="complain_status" style="display: none" disabled
+        >Complaint Status:
+        <select id="complain_status" name="complain_status">
+          <option value="pending">Pending</option>
+          <option value="in_progress">In Progress</option>
+          <option value="completed">Completed</option></select
+        ><br /> </label
+      ><br />
+
+        </form>
+    </div>
+
+    </div>
+</div>
+    {% endblock %}

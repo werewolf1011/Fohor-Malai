@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block content %} {% load static %} <link
+rel="stylesheet" href="{% static "css/complain-feed.css" %}">
+
+<div class="complaint-container">
+  <div class="complaint-header">
+    <h2>Complain Feed</h2>
+    <form method="get" action="{% url 'preview' %}">
+      <label for="search">Search:</label>
+      <input
+        type="text"
+        id="search"
+        name="search"
+        placeholder="Search complainer..."
+      />
+      <button type="submit">Search</button>
+    </form>
+  
+   
+
+  </div>
+  <div class="complaint-row2">
+    <div class="complaint-column">Name</div>
+    <div class="complaint-column">Complain Desc</div>
+    <div class="complaint-column">Date</div>
+    <div class="complaint-column">Status</div>
+  </div>
+  {% for complaint in previews %}
+
+  <div class="complaint-row">
+    <div class="complainer-name">{{complaint.complainer_name | safe}}</div>
+    <div class="complaint-column3">{{complaint.complaint_desc | safe}}</div>
+    <div class="complaint-column3">{{complaint.created_at | date:"Y-m-d"| safe}}</div>
+    <div class="status">{{complaint.complain_status}}</div>
+  </div>
+  {% endfor %}
+</div>
+<script src="{% static "js/complaintfeed.js" %}"></script>
+  
+</script>
+{% endblock %}

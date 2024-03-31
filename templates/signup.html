@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static "css/signup.css" %}">
+
+    
+{% for message in messages%}
+<div class="alert info">
+  <span class="closebtn">&times;</span>  
+  <strong>Be carefull!</strong> {{message}}
+</div>
+{% endfor %}
+    <script src="{% static "js/formvalidation.js"%}"></script>
+    <script src="{%static "js/alert.js" %}"> </script>
+
+<div class="signup_container">
+<div class="photo">
+        <img src="{% static "image/फोहो_र_मलाइ__1_-removebg-preview.png" %}" alt="">
+    </div>
+
+    <div class="photo2"> <img src="{% static "image/trash-6764579_640.png" %}" alt=""  style="height: 600px;" sytle="width:30%">
+    </div>
+
+    <div class="container">
+        <h2>Create Account</h2>
+        <div class="form-container">
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="input-name1">
+
+                    <input type="text" class="name" name="firstname" required >
+                    <span>First Name</span>
+
+
+                    <span2>
+                        <input type="text" class="name" name="lastname"  required>
+
+                        <span1>Last Name</span1>
+                    </span2>
+
+                </div>
+
+                <div class="input-name1">
+                    <input type="text" class="name" id="username" name="username" pattern="[a-zA-Z0-9]+" title="Please enter alphanumeric username" required>
+                    <span>Username</span>
+
+                    <span2>
+                        <input type="tel" class="name" name="phone" pattern="[0-9]{10}" title="Please enter a 10-digit phone number" required>
+                        <span1>Phone No.</span1>
+                    </span2>
+
+                </div>
+
+                <div class="input-name">
+                    <input type="email" placeholder="" class="text-name" name="email" required>
+                    <label for="email">Email</label>
+                    <div class="input-name">
+                        <input type="password" class="text-name" id="password" name="password" pattern="(?=.*\d)(?=.*[A-Z])(?=.*\W)(?=.*[a-z]).{8,}" title="Password must contain at least 8 characters, including 1 uppercase letter, 1 number, and 1 symbol" required>
+                        <span1>Password</span1>
+                    </div>
+                    
+                    <div class="input-name">
+                        <input type="password" class="text-name" id="confirmPassword" name="confirmPassword" pattern="(?=.*\d)(?=.*[A-Z])(?=.*\W)(?=.*[a-z]).{8,}" title="Password must contain at least 8 characters, including 1 uppercase letter, 1 number, and 1 symbol" required>
+                        <span1>Confirm Password</span1>
+                        <p id="passwordMatchError" style="color: red; display: none;">Passwords do not match.</p>
+                    </div>
+                    
+                    <script src="{%static "js/formvalidation.js"%}">
+                        // var password = document.getElementById("password");
+                        // var confirmPassword = document.getElementById("confirmPassword");
+                        // var passwordMatchError = document.getElementById("passwordMatchError");
+                    
+                        // function validatePassword() {
+                        //     if (password.value != confirmPassword.value) {
+                        //         passwordMatchError.style.display = "block";
+                        //         confirmPassword.setCustomValidity("Passwords do not match");
+                        //     } else {
+                        //         passwordMatchError.style.display = "none";
+                        //         confirmPassword.setCustomValidity("");
+                        //     }
+                        // }
+                    
+                        // password.addEventListener("change", validatePassword);
+                        // confirmPassword.addEventListener("keyup", validatePassword);
+                    </script>
+
+                <div class="login">
+                    <p>Already have an account? <a href="{% url "login" %}" class="Login">Login</a></p>
+                </div>
+
+                <div class="input-name">
+                    <button type="submit" class="btn">Create Account </button>
+                </div>
+
+                <div class="or">
+                    <p>OR</p>
+                </div>
+                <div class="continue-with-google">
+                    <button class="btn"><a href="{% url 'social:begin' 'google-oauth2' %}"> <ion-icon name="logo-google"></ion-icon> Continue with Google </a></button>
+                </div>
+        </div>
+        </form>
+    </div>
+    </div>
+    <!-- {% comment %} <script>
+        var password = document.getElementById("password");
+        var confirmPassword = document.getElementById("confirmPassword");
+        var passwordMatchError = document.getElementById("passwordMatchError");
+    
+        function validatePassword() {
+            if (password.value != confirmPassword.value) {
+                passwordMatchError.style.display = "block";
+                confirmPassword.setCustomValidity("Passwords do not match");
+            } else {
+                passwordMatchError.style.display = "none";
+                confirmPassword.setCustomValidity("");
+            }
+        }
+    
+        password.addEventListener("change", validatePassword);
+        confirmPassword.addEventListener("keyup", validatePassword);
+    </script> {% endcomment %} -->
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</div>
+    {% endblock %}

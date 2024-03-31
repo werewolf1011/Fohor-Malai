@@ -1,0 +1,22 @@
+{% extends "base.html" %} 
+ {% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'css/news_blog.css' %}" />
+<div class="space">
+  <h1>NEWS BLOGS</h1>
+  <div class="row">
+    {% for n in news_blog_details %}
+    <div class="col">
+      <div class="news_details">
+        <div class="news_title">{{n.news_title | safe}}</div>
+        <div class="img">
+          {% if n.news_image %}
+          <img src="/media/{{n.news_image}}" alt="" />
+          {% endif %}
+        </div>
+        <p>{{n.news_content | safe}}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
